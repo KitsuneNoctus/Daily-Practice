@@ -85,7 +85,20 @@ import Foundation
  */
 
 func simplifyPath(_ path: String) -> String {
-        
+    var simpleStack: [Character] = []
+    var cDir: String = ""
+    for ch in path {
+        if ch == "/" {
+            if
+        }
+        else {
+            simpleStack.append(ch)
+        }
+    }
+    if simpleStack.last == "/" {
+        simpleStack.removeLast()
+    }
+    return String(simpleStack)
 }
 
 //: [Next](@next)
