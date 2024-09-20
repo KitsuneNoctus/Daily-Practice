@@ -6,5 +6,6 @@
         <page name='Reverse String'/>
         <page name='Container With Most Water '/>
         <page name='Valid Parentheses '/>
+        <page name='Simplify Path'/>
     </pages>
 </playground>

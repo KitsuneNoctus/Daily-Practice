@@ -139,6 +139,6 @@ class Solution {
 //    init(arrayLiteral elements: Self.Element...) {
 //        storage = elements
 //    }
-}
+//}
 
 //: [Next](@next)
