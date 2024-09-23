@@ -84,21 +84,50 @@ import Foundation
 
  */
 
+// https://interviewing.io/questions/simplify-path
+// https://leetcode.com/problems/simplify-path/?envType=study-plan-v2&envId=top-interview-150
+
+// Used another persons code to complete.
+//TODO: Work out another way to do this yourself
+
 func simplifyPath(_ path: String) -> String {
-    var simpleStack: [Character] = []
-    var cDir: String = ""
-    for ch in path {
-        if ch == "/" {
-            if
+    let pathComponents = path.split(separator: "/")
+    var simpleStack = [String]()
+    for component in pathComponents {
+        if component == "" { continue }
+        if component == "." { continue }
+        if component == ".." && simpleStack.count > 0 {
+            simpleStack.removeLast();
+            continue
         }
-        else {
-            simpleStack.append(ch)
-        }
+        if component == ".." { continue }
+        simpleStack.append(String(component))
     }
-    if simpleStack.last == "/" {
-        simpleStack.removeLast()
+    let simplifiedPath = simpleStack.reduce("") { result, str in
+        result + "/" + str
     }
-    return String(simpleStack)
+    guard simplifiedPath != "" else { return "/" }
+    return simplifiedPath
 }
+
+//    for ch in path {
+//        if ch == "/" {
+//            if cDir == ".." {
+////                if simpleStack {
+////                }
+////                i = simpleStack.find
+//            }
+//            else {
+////                simpleStack += "/" + cDir
+//            }
+//        }
+//        else {
+//            cDir += String(ch)
+//        }
+//    }
+//    if simpleStack.last == "/" {
+//        simpleStack.removeLast()
+//    }
+//    return String(simpleStack)
 
 //: [Next](@next)
