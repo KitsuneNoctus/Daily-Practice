@@ -1,7 +1,7 @@
 //: [Previous](@previous)
 
 import Foundation
-
+// Hashmap problem
 /*
  # 242. Valid Anagram
  
@@ -36,7 +36,62 @@ import Foundation
  */
 
 func isAnagram(_ s: String, _ t: String) -> Bool {
-    
+    var dictOne = [String:Int]()
+    var dictTwo = [String:Int]()
+    if s.count == t.count {
+        s.map { ch in
+            if let val = dictOne[String(ch)] {
+                dictOne[String(ch)] = 1 + val
+            }
+            else {
+                dictOne[String(ch)] = 1
+            }
+        }
+        t.map { ch in
+            if let val = dictTwo[String(ch)] {
+                dictTwo[String(ch)] = 1 + val
+            }
+            else {
+                dictTwo[String(ch)] = 1
+            }
+        }
+    }
+    else {
+        return false
+    }
+    return dictOne == dictTwo ? true : false
+}
+
+isAnagram("anagram", "nagaram")
+
+//MARK: Other User solutions
+
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        guard s.count == t.count else { return false }
+
+        var dict = [Character: Int]()
+
+        for char in s {
+            dict[char, default: 0] += 1
+        }
+
+        for char in t {
+            if let count = dict[char], count > 0 {
+                dict[char] = count - 1
+            } else {
+                return false
+            }
+        }
+
+        return true
+    }
+}
+
+class Solution2 {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        s.sorted() == t.sorted()
+    }
 }
 
 //: [Next](@next)
