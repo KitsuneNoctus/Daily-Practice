@@ -7,5 +7,6 @@
         <page name='Container With Most Water '/>
         <page name='Valid Parentheses '/>
         <page name='Simplify Path'/>
+        <page name='242. Valid Anagram '/>
     </pages>
 </playground>
