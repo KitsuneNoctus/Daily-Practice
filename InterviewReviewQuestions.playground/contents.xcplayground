@@ -8,5 +8,6 @@
         <page name='Valid Parentheses '/>
         <page name='Simplify Path'/>
         <page name='242. Valid Anagram '/>
+        <page name='49. Group Anagrams '/>
     </pages>
 </playground>
