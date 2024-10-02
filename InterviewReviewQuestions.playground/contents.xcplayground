@@ -9,5 +9,6 @@
         <page name='Simplify Path'/>
         <page name='242. Valid Anagram '/>
         <page name='49. Group Anagrams '/>
+        <page name='26. Remove Duplicates from Sorted Array '/>
     </pages>
 </playground>
