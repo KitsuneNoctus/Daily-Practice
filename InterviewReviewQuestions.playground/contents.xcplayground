@@ -12,5 +12,6 @@
         <page name='26. Remove Duplicates from Sorted Array '/>
         <page name='88. Merge Sorted Array '/>
         <page name='392. Is Subsequence '/>
+        <page name='13. Roman to Integer'/>
     </pages>
 </playground>
