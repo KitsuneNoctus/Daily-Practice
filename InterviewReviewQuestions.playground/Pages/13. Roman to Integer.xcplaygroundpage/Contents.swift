@@ -58,35 +58,21 @@ import Foundation
 
  */
 
+// Based off anothers solution
 func romanToInt(_ s: String) -> Int {
     var stringArray = Array(s)
     let keys: [String:Int] = ["I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000]
-    var left = 0
-    var right = 1
-    var returnValue = 0
-    stringArray.reverse()
-    print(stringArray)
+    var previous = 0, returnValue = 0
     
-    while (right < s.count) {
-        let strPiece = String(stringArray[left])
-        let strRPiece = String(stringArray[right])
-        if keys[strPiece] ?? 0 > keys[strRPiece] ?? 0 {
-            returnValue += keys[strPiece] ?? 0
-        }
-        else if keys[strPiece] ?? 0 = keys[strRPiece] ?? 0 {
-            returnValue += keys[strPiece] ?? 0
-        }
-        else {
-            returnValue -= keys[strPiece] ?? 0
-        }
-        left += 1
-        right += 1
+    for char in s {
+        let value = keys[String(char)] ?? 0
+        returnValue += (value <= previous) ? previous : -previous
+        previous = value
     }
-    var minP = String(stringArray[left])
-    returnValue += keys[minP] ?? 0
+    returnValue += previous
     return returnValue
 }
 
-romanToInt("MCMXCIV")
+print(romanToInt("IIV"))
 
 //: [Next](@next)
